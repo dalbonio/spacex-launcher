@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useTable } from "react-table";
+import React, {useEffect, useState} from "react";
+import SpacexFutureTable from "./spacex-table/spacex-future-table";
+import SpacexPastTable from "./spacex-table/spacex-past-table";
+import {upcomingLaunches, pastLaunches} from "./services/index"
 
 function App() {
+
+  const [data, setData] = useState([])
+  const [animationData, setAnimationData] = useState(true);
+
+  useEffect(() => {
+      pastLaunches((response) => {
+        console.log(response)
+        if(response.status <= 299 && response.status >= 200){
+          setData(response.data)
+          setAnimationData(false)
+        }
+      });
+    }, [animationData]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    // <SpacexFutureTable data={data}>
+    // </SpacexFutureTable>
+
+    <SpacexPastTable data={data}>
+    </SpacexPastTable>
+  )
 }
 
 export default App;
