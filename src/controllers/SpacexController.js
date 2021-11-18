@@ -1,7 +1,7 @@
 const axios = require("axios");
 
-exports.next = (req, res, next) => {
-   axios.post("https://api.spacexdata.com/v4/launches/next").then( (response) => res.status(200).send(response.data))
+  exports.next = (req, res, next) => {
+   axios.get("https://api.spacexdata.com/v4/launches/next").then( (response) => res.status(200).send(response.data))
  };
   
  exports.latest = (req, res, next) => { 
