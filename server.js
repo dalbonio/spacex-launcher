@@ -14,6 +14,7 @@ app.use("/", express.static(path.join(__dirname, "client", "build")));
 app.use("/:hack", express.static(path.join(__dirname, "client", "build")));
 
 app.use(express.json());
-app.listen(3000);
+console.log(process.env)
+app.listen(process.env.PORT || 3000);
 
 console.log('running at port 3000')
