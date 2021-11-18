@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const URL = "http://localhost:3000/api";
+const URL = process.env.NODE_ENV === "production" ? "https://spacexlauncher-dev.herokuapp.com/api" : "http://localhost:3000/api";
+
+console.log(process.env.NODE_ENV)
+console.log(URL)
 
 const api = axios.create({
   baseURL: URL,
