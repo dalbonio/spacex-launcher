@@ -1,7 +1,17 @@
 import React from "react";
 import Button from '@mui/material/Button';
 import {getRocket, getLaunchpad, upcomingLaunches} from "../../services/index"
-import SpacexTable from "../../components/spacex-table";
+import SpacexTable from "../../components/spacex-table/index";
+import Nav from "../../components/nav/index"
+import styled from 'styled-components'
+
+const Container = styled.div`
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
 
 function SpacexFutureTable() {
 
@@ -113,8 +123,10 @@ function SpacexFutureTable() {
 
   return (
     <React.Fragment>
-      {/* buttons to change path */}
-      <SpacexTable animationData={animationData} columns={columns} data={data} open={open} handleClose={handleClose} modalData={modalData} modalAnimationData={modalAnimationData}></SpacexTable>
+      <Container>
+        <Nav active="proximos"></Nav>
+        <SpacexTable animationData={animationData} columns={columns} data={data} open={open} handleClose={handleClose} modalData={modalData} modalAnimationData={modalAnimationData}></SpacexTable>
+      </Container>
     </React.Fragment>
   );
 }

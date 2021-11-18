@@ -2,6 +2,17 @@ import React from "react";
 import Button from '@mui/material/Button';
 import {getRocket, getLaunchpad, nextLaunch} from "../../services/index"
 import SpacexTable from "../../components/spacex-table";
+import Nav from "../../components/nav/index"
+
+import styled from 'styled-components'
+
+const Container = styled.div`
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
 
 function SpacexNextTable() {
 
@@ -113,8 +124,10 @@ function SpacexNextTable() {
 
   return (
     <React.Fragment>
-      {/* buttons to change path */}
-      <SpacexTable animationData={animationData} columns={columns} data={data} open={open} handleClose={handleClose} modalData={modalData} modalAnimationData={modalAnimationData}></SpacexTable>
+      <Container>
+        <Nav active="proximo"></Nav>
+        <SpacexTable animationData={animationData} columns={columns} data={data} open={open} handleClose={handleClose} modalData={modalData} modalAnimationData={modalAnimationData}></SpacexTable>
+      </Container>
     </React.Fragment>
   );
 }

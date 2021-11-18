@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const URL = process.env.NODE_ENV === "production" ? "https://spacexlauncher-dev.herokuapp.com/api" : "http://localhost:3000/api";
+const port = process.env.PORT || 3000;
+
+const URL = process.env.NODE_ENV === "production" ? "https://spacexlauncher-dev.herokuapp.com/api" : `http://localhost:${port}/api`;
 
 console.log(process.env.NODE_ENV)
 console.log(URL)
