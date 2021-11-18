@@ -1,7 +1,7 @@
 import { useTable } from "react-table";
 import React, {useEffect, useState} from "react";
-import SpacexFutureTable from "./spacex-table/spacex-future-table";
-import SpacexPastTable from "./spacex-table/spacex-past-table";
+import SpacexFutureTable from "./pages/spacex-future-table";
+import SpacexPastTable from "./pages/spacex-past-table";
 import {upcomingLaunches, pastLaunches} from "./services/index"
 
 function App() {
