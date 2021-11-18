@@ -56,3 +56,25 @@ export const latestLaunch = (_callback) => {
         _callback(errors.response);
       });
 };
+
+export const getRocket = (id, _callback) => {
+  api
+    .get(`/rocket/${id}`, config)
+    .then((response) => {
+      _callback(response);
+    })
+    .catch((errors) => {
+      _callback(errors.response);
+    });
+};
+
+export const getLaunchpad = (id, _callback) => {
+  api
+    .get(`/launchpad/${id}`, config)
+    .then((response) => {
+      _callback(response);
+    })
+    .catch((errors) => {
+      _callback(errors.response);
+    });
+};
