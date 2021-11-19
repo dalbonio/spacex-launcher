@@ -2,7 +2,7 @@
 
 1 - O frontend foi feito em React, utilizando majoritariamente os pacotes react-table, materialUI e styled-components. 
 
-2 - Os dados foram filtrados pois muita informação da API não é interessante para um usuário final.
+2 - Os dados da API foram filtrados pois seria muita informação para o usuário final.
 
 3 - Os componentes e as páginas estão em pastas separadas. As requisições estão na pasta "src/services".
 
