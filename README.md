@@ -12,7 +12,11 @@
 
 6 - A aplicação está no heroku através do link https://spacexlauncher-dev.herokuapp.com/
 
-7 - Para rodar localmente, é preciso acessar a pasta client, executar o comando `npm run build` para gerar os arquivos estáticos, e depois executar o comando `npm start` na raiz do projeto.
+7 - Eu optei por fazer o servidor consumir os arquivos estaticos gerados pela build do frontend para que apenas um servidor ficasse hospedado no heroku, mas o frontend e o backend são independentes. 
 
-8 - O Script do HotJar foi instalado
+8 - Antes de executar a aplicação é necessário rodar o comando `npm install` na raiz do projeto e também na pasta "client"
+
+9 - Para rodar localmente, é preciso acessar a pasta client, executar o comando `npm run build` para gerar os arquivos estáticos, e depois executar o comando `npm start` na raiz do projeto.
+
+10 - O Script do HotJar foi instalado
 
