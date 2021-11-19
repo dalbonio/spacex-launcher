@@ -8,6 +8,15 @@ import SpacexFutureTable from "./pages/spacex-future-table/index"
 import SpacexLatestTable from "./pages/spacex-latest-table/index"
 import SpacexNextTable from "./pages/spacex-next-table/index"
 
+import {
+  hotjar
+} from 'react-hotjar';
+
+const hjid = "2709171"
+const hjsv = "6"
+
+hotjar.initialize(hjid, hjsv);
+
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
