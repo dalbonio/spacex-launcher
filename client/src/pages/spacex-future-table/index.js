@@ -28,7 +28,6 @@ function SpacexFutureTable() {
 
     React.useEffect(() => {
         upcomingLaunches((response) => {
-          console.log(response)
           if(response.status <= 299 && response.status >= 200){
             setData(response.data)
             setAnimationData(false)
@@ -38,7 +37,6 @@ function SpacexFutureTable() {
 
     const getRocketData = (id) => {
         getRocket(id, (response) => {
-          console.log(response)
           if(response.status <= 299 && response.status >= 200){
             const picked = (({ name, type, country, first_flight, wikipedia}) => ({ name, type, country, first_flight, wikipedia}))(response.data);
             setModalData(picked)
@@ -49,7 +47,6 @@ function SpacexFutureTable() {
 
     const getLaunchpadData = (id) => {
       getLaunchpad(id, (response) => {
-        console.log(response)
         if(response.status <= 299 && response.status >= 200){
           const picked = (({ full_name, locality, region, launch_attempts, launch_successes, timezone, status, details }) => ({ full_name, locality, region, launch_attempts, launch_successes, timezone, status, details }))(response.data);
           setModalData(picked)
@@ -63,13 +60,11 @@ function SpacexFutureTable() {
     }
 
     const rocketButtonClick = (e) => {
-      console.log(e.target.innerText)
       getRocketData(e.target.innerText)
       handleOpen()
     }
 
     const launchpadButtonClick = (e) => {
-      console.log(e.target.innerText)
       getLaunchpadData(e.target.innerText)
       handleOpen()
     }
